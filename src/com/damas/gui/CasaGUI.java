@@ -11,6 +11,8 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import com.damas.objetos.Peca;
+
 /**
  * Interface Grafica de uma Casa no tabuleiro do jogo.
  *
@@ -26,15 +28,14 @@ public class CasaGUI extends JButton {
     private static final Color COR_DESTAQUE = new Color(0, 1, 0, 0.4f);
 
     // Icones das pecas
-    private static final URL PEDRA_BRANCA_URL = CasaGUI.class.getResource("/resources/pedra_branca.png"); 
-    private static final URL DAMA_BRANCA_URL = CasaGUI.class.getResource("/resources/dama_branca.png"); 
-    private static final URL PEDRA_VERMELHA_URL = CasaGUI.class.getResource("/resources/pedra_vermelha.png"); 
-    private static final URL DAMA_VERMELHA_URL = CasaGUI.class.getResource("/resources/dama_vermelha.png"); 
-
-    private static final Icon PEDRA_BRANCA = new ImageIcon(PEDRA_BRANCA_URL);
-    private static final Icon DAMA_BRANCA = new ImageIcon(DAMA_BRANCA_URL);
-    private static final Icon PEDRA_VERMELHA = new ImageIcon(PEDRA_VERMELHA_URL);
-    private static final Icon DAMA_VERMELHA = new ImageIcon(DAMA_VERMELHA_URL);
+    // private static final URL PEDRA_BRANCA_URL = CasaGUI.class.getResource("/resources/pedra_branca.png"); 
+    // private static final URL DAMA_BRANCA_URL = CasaGUI.class.getResource("/resources/dama_branca.png"); 
+    // private static final URL PEDRA_VERMELHA_URL = CasaGUI.class.getResource("/resources/pedra_vermelha.png"); 
+    // private static final URL DAMA_VERMELHA_URL = CasaGUI.class.getResource("/resources/dama_vermelha.png"); 
+    // private static final Icon PEDRA_BRANCA = new ImageIcon(PEDRA_BRANCA_URL);
+    // private static final Icon DAMA_BRANCA = new ImageIcon(DAMA_BRANCA_URL);
+    // private static final Icon PEDRA_VERMELHA = new ImageIcon(PEDRA_VERMELHA_URL);
+    // private static final Icon DAMA_VERMELHA = new ImageIcon(DAMA_VERMELHA_URL);
 
     // Cores das pecas
     public static final int SEM_PECA = -1;
@@ -73,21 +74,25 @@ public class CasaGUI extends JButton {
         return this.y;
     }
 
-    public void desenharPedraBranca() {
-        setIcon(PEDRA_BRANCA);
+       public void desenharPeca(Peca peca) {
+        setIcon(peca.getIcone());
     }
 
-    public void desenharPedraVermelha() {
-        setIcon(PEDRA_VERMELHA);
-    }
+    // public void desenharPedraBranca() {
+    //     setIcon(PEDRA_BRANCA);
+    // }
 
-    public void desenharDamaBranca() {
-        setIcon(DAMA_BRANCA);
-    }
+    // public void desenharPedraVermelha() {
+    //     setIcon(PEDRA_VERMELHA);
+    // }
 
-    public void desenharDamaVermelha() {
-        setIcon(DAMA_VERMELHA);
-    }
+    // public void desenharDamaBranca() {
+    //     setIcon(DAMA_BRANCA);
+    // }
+
+    // public void desenharDamaVermelha() {
+    //     setIcon(DAMA_VERMELHA);
+    // }
 
     public void apagarPeca() {
         setIcon(null);
@@ -97,19 +102,19 @@ public class CasaGUI extends JButton {
         return getIcon() != null;
     }
     
-    public int getCorPeca() {
-        Icon icone = getIcon();
+    // public int getCorPeca() {
+    //     Icon icone = getIcon();
         
-        if (icone == PEDRA_BRANCA || icone == DAMA_BRANCA) {
-            return PECA_BRANCA;
-        }
-        else if (icone == PEDRA_VERMELHA || icone == DAMA_VERMELHA) {
-             return PECA_VERMELHA;
-        }
-        else {
-            return SEM_PECA;
-        }
-    }
+    //     if (icone == PEDRA_BRANCA || icone == DAMA_BRANCA) {
+    //         return PECA_BRANCA;
+    //     }
+    //     else if (icone == PEDRA_VERMELHA || icone == DAMA_VERMELHA) {
+    //          return PECA_VERMELHA;
+    //     }
+    //     else {
+    //         return SEM_PECA;
+    //     }
+    // }
     
     public void destacar() {
         setBackground(COR_DESTAQUE);

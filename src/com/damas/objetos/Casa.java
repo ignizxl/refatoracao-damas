@@ -11,18 +11,18 @@ public class Casa {
 
     private int x;
     private int y;
-    private Pedra peca;
+    private Peca peca; // Pedra peca
 
     public Casa(int x, int y) {
         this.x = x;
         this.y = y;
         this.peca = null;
     }
-    
+
     /**
      * @param peca a Pe�ça a ser posicionada nesta Casa.
      */
-    public void colocarPeca(Pedra peca) {
+    public void colocarPeca(Peca peca) {
         this.peca = peca;
     }
 
@@ -32,14 +32,14 @@ public class Casa {
     public void removerPeca() {
         peca = null;
     }
-    
+
     /**
      * @return a Peca posicionada nesta Casa, ou Null se a casa estiver livre.
      */
-    public Pedra getPeca() {
+    public Peca getPeca() {
         return peca;
     }
-    
+
     /**
      * @return true se existe uma peça nesta casa, caso contrario false.
      */

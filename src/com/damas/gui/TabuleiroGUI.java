@@ -4,9 +4,8 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 import com.damas.objetos.Casa;
-import com.damas.objetos.Dama;
+import com.damas.objetos.Peca;
 import com.damas.objetos.Jogo;
-import com.damas.objetos.Pedra;
 import com.damas.objetos.Tabuleiro;
 
 /**
@@ -82,23 +81,10 @@ public class TabuleiroGUI extends JPanel {
                 Tabuleiro tabuleiro = jogo.getTabuleiro();
                 Casa casa = tabuleiro.getCasa(x, y);
                 if (casa.possuiPeca()) {
-                    Pedra peca = casa.getPeca();
-
-                    switch (peca.getTipo()) {
-                        case Pedra.PEDRA_BRANCA:
-                            casaGUI.desenharPedraBranca();
-                            break;
-                        case Dama.DAMA_BRANCA:
-                            casaGUI.desenharDamaBranca();
-                            break;
-                        case Pedra.PEDRA_VERMELHA:
-                            casaGUI.desenharPedraVermelha();
-                            break;
-                        case Dama.DAMA_VERMELHA:
-                            casaGUI.desenharDamaVermelha();
-                            break;
-                    }
+                    Peca peca = casa.getPeca();
+                    casaGUI.desenharPeca(peca);
                 }
+                
                 else {
                     casaGUI.apagarPeca();
                 }

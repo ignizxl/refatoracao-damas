@@ -47,4 +47,8 @@ public class Jogador {
             this.nome = DEFAULT_NAME;
         }
     }
+
+    public boolean isVencedor(){
+        return pontos == 12;
+    }
 }
